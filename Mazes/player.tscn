@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bty438n0cr3oo"]
+
+[ext_resource type="Script" uid="uid://dejsc6fb6bgfv" path="res://Mazes/player.gd" id="1_cyhir"]
+
+[node name="Player" type="Camera3D" unique_id=2344008]
+script = ExtResource("1_cyhir")
