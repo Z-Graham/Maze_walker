@@ -2,5 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dejsc6fb6bgfv" path="res://Mazes/player.gd" id="1_cyhir"]
 
-[node name="Player" type="Camera3D" unique_id=2344008]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cyhir"]
+
+[node name="Player" type="Camera3D" unique_id=230167780]
 script = ExtResource("1_cyhir")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1885344442]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=34438088]
+shape = SubResource("BoxShape3D_cyhir")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

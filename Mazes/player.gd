@@ -38,7 +38,6 @@ func _process(delta: float) -> void:
 				direction='right'
 			elif direction=='right':
 				direction='forward'
-			
 	if Input.is_action_just_pressed("turn_right"):
 		if not turning:
 			turning=true
@@ -54,3 +53,10 @@ func _process(delta: float) -> void:
 				direction='left'
 			elif direction=='right':
 				direction='back'
+
+
+
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
