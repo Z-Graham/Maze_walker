@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvs75gcqv7gjl"]
 
-[ext_resource type="PackedScene" uid="uid://bty438n0cr3oo" path="res://Mazes/player.tscn" id="1_itefq"]
+[ext_resource type="Script" uid="uid://nmb5hpkcs5rk" path="res://Mazes/maze_1.gd" id="1_5ttg2"]
+[ext_resource type="PackedScene" uid="uid://bty438n0cr3oo" path="res://Player/player.tscn" id="1_itefq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6j225"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,6 +26,7 @@ albedo_color = Color(0.01640001, 0.41, 0.068880044, 1)
 albedo_color = Color(0.56, 0.34533334, 0, 1)
 
 [node name="maze_1" type="Node3D" unique_id=988982650]
+script = ExtResource("1_5ttg2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=877148104]
 environment = SubResource("Environment_5ttg2")
@@ -219,10 +221,79 @@ use_collision = true
 size = Vector3(1, 5.0981445, 4.4962716)
 material = SubResource("StandardMaterial3D_6j225")
 
-[node name="Door" type="CSGBox3D" parent="." unique_id=2093218539]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.018091, 2.5053833, 24.504099)
-size = Vector3(3.961914, 5.0340576, 1)
+[node name="Door" type="CSGBox3D" parent="." unique_id=2093218539 groups=["door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.996424, 2.530316, 24.504099)
+use_collision = true
+size = Vector3(4.005249, 5.0839233, 1)
 material = SubResource("StandardMaterial3D_itefq")
 
 [node name="Player" parent="." unique_id=2344008 instance=ExtResource("1_itefq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.30139, 1.0256276, 23.228952)
+
+[node name="Puzzle" type="ColorRect" parent="." unique_id=1489238136]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Puzzle" unique_id=1452928724]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="ColorRect" type="ColorRect" parent="Puzzle/HBoxContainer2" unique_id=1095480657]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Puzzle/HBoxContainer2" unique_id=1399158824]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0, 0.01666689, 1, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Puzzle/HBoxContainer2" unique_id=251362242]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0.2166667, 1, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Puzzle" unique_id=1832468185]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -50.5
+offset_right = 70.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Button" type="Button" parent="Puzzle/HBoxContainer" unique_id=1127007223]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Puzzle/HBoxContainer" unique_id=679931213]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Puzzle/HBoxContainer" unique_id=2096994818]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[connection signal="hit_end" from="Player" to="." method="_on_player_hit_end"]

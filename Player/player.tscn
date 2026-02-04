@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bty438n0cr3oo"]
 
-[ext_resource type="Script" uid="uid://dejsc6fb6bgfv" path="res://Mazes/player.gd" id="1_cyhir"]
+[ext_resource type="Script" uid="uid://dejsc6fb6bgfv" path="res://Player/player.gd" id="1_cyhir"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyhir"]
 
@@ -12,4 +12,4 @@ script = ExtResource("1_cyhir")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=34438088]
 shape = SubResource("BoxShape3D_cyhir")
 
-[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

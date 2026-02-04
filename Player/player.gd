@@ -1,10 +1,17 @@
 extends Camera3D
 @export var speed=5
+signal hit_end
 var direction='forward'
 var turning=false
+var moving_forward=false
+var moving_back=false
+var del:float
 func _process(delta: float) -> void:
+	del=delta
 	if Input.is_action_pressed('move_forward'):
 		if not turning:
+			moving_back=false
+			moving_forward=true
 			if direction=='forward':
 				global_position.z-=speed*delta
 			elif direction=='left':
@@ -13,8 +20,11 @@ func _process(delta: float) -> void:
 				global_position.x+=speed*delta
 			elif direction=='back':
 				global_position.z+=speed*delta
+				
 	if Input.is_action_pressed('move_backward'):
 		if not turning:
+			moving_forward=false
+			moving_back=true
 			if direction=='forward':
 				global_position.z+=speed*delta
 			elif direction=='left':
@@ -57,6 +67,25 @@ func _process(delta: float) -> void:
 
 
 
-
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
+	if moving_forward:
+		if direction=='left':
+			global_position.x+=0.25
+		elif direction=='right':
+			global_position.x-=0.25
+		elif direction=='forward':
+			global_position.z+=0.25
+		elif direction=='back':
+			global_position.z-=0.25
+	elif moving_back:
+		if direction=='left':
+			global_position.x-=0.25
+		elif direction=='right':
+			global_position.x+=0.25
+		elif direction=='forward':
+			global_position.z-=0.25
+		elif direction=='back':
+			global_position.z+=0.25
+	if 'door' in body.get_groups():
+		hit_end.emit()
+		
