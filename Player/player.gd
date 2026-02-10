@@ -73,21 +73,21 @@ func _process(delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if moving_forward:
 		if direction=='left':
-			global_position.x+=0.25
+			global_position.x+=0.5
 		elif direction=='right':
-			global_position.x-=0.25
+			global_position.x-=0.5
 		elif direction=='forward':
-			global_position.z+=0.25
+			global_position.z+=0.5
 		elif direction=='back':
-			global_position.z-=0.25
+			global_position.z-=0.5
 	elif moving_back:
 		if direction=='left':
-			global_position.x-=0.25
+			global_position.x-=0.5
 		elif direction=='right':
-			global_position.x+=0.25
+			global_position.x+=0.5
 		elif direction=='forward':
-			global_position.z-=0.25
+			global_position.z-=0.5
 		elif direction=='back':
-			global_position.z+=0.25
+			global_position.z+=0.5
 	if 'door' in body.get_groups():
 		hit_end.emit()

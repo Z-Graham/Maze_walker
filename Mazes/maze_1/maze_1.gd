@@ -12,9 +12,6 @@ func _on_player_hit_end() -> void:
 
 
 
-
-
-
 func _on_puzzle_1_check(red: Variant, blue: Variant, green: Variant) -> void:
 	if red==keyR and blue==keyB and green==keyG:
 		print("you win")

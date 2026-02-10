@@ -230,6 +230,7 @@ material = SubResource("StandardMaterial3D_itefq")
 
 [node name="Player" parent="." unique_id=2344008 instance=ExtResource("1_itefq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.30139, 1.0256276, 23.228952)
+speed = 10
 
 [node name="Puzzle_1" parent="." unique_id=890264653 instance=ExtResource("3_tdc2l")]
 visible = false
