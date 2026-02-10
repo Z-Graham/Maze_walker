@@ -1,10 +1,14 @@
 extends Node3D
 
-@export var keyR=3
-@export var keyB=2
-@export var keyG=5
+@export var keyR=randi_range(1,10)
+@export var keyB=randi_range(1,10)
+@export var keyG=randi_range(1,10)
 @onready var puzzle_1: ColorRect = $Puzzle_1
 
+func ready():
+	$HintR.text=str(keyR)
+	$HintB.text=str(keyB)
+	$HintG.text=str(keyG)
 
 func _on_player_hit_end() -> void:
 	$Puzzle_1.visible=true
@@ -14,10 +18,12 @@ func _on_player_hit_end() -> void:
 
 func _on_puzzle_1_check(red: Variant, blue: Variant, green: Variant) -> void:
 	if red==keyR and blue==keyB and green==keyG:
-		print("you win")
+		$Puzzle_1.visible=false
+		$end_of_level_1.visible=true
 	else:
-		print("try again")
+		$Puzzle_1.wrong.visible=true
 
 
 func _on_puzzle_1_close() -> void:
 	$Player.stuck=false
+	$Puzzle_1.wrong.visible=false

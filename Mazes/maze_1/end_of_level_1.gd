@@ -1,0 +1,17 @@
+extends ColorRect
+
+
+
+
+func _on_next_pressed() -> void:
+	pass # Replace with function body.
+
+
+
+
+func _on_retry_pressed() -> void:
+	get_tree().reload_current_scene()
+
+
+func _on_menu_pressed() -> void:
+	pass

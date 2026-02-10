@@ -12,6 +12,9 @@ font_size = 43
 font_size = 43
 font_color = Color(0.21568628, 1, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_nfhiq"]
+font_size = 40
+
 [node name="Puzzle" type="ColorRect" unique_id=890264653]
 anchors_preset = 15
 anchor_right = 1.0
@@ -148,6 +151,23 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 45
 text = "Close"
+
+[node name="wrong" type="Label" parent="." unique_id=2016798572]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -228.0
+offset_right = 20.0
+offset_bottom = -205.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The door remains locked"
+label_settings = SubResource("LabelSettings_nfhiq")
 
 [connection signal="pressed" from="HBoxContainer/red" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="HBoxContainer/blue" to="." method="_on_blue_pressed"]

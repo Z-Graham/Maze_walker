@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://nmb5hpkcs5rk" path="res://Mazes/maze_1/maze_1.gd" id="1_5ttg2"]
 [ext_resource type="PackedScene" uid="uid://bty438n0cr3oo" path="res://Player/player.tscn" id="1_itefq"]
 [ext_resource type="PackedScene" uid="uid://bafuvucpdw6b7" path="res://Mazes/maze_1/puzzle_1.tscn" id="3_tdc2l"]
+[ext_resource type="PackedScene" uid="uid://i0nmerajoe76" path="res://Mazes/maze_1/end_of_level_1.tscn" id="4_7v20w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6j225"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -252,6 +253,9 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 modulate = Color(0, 1, 0.01666665, 1)
 text = "5"
 font_size = 300
+
+[node name="end_of_level_1" parent="." unique_id=1311300751 instance=ExtResource("4_7v20w")]
+visible = false
 
 [connection signal="hit_end" from="Player" to="." method="_on_player_hit_end"]
 [connection signal="check" from="Puzzle_1" to="." method="_on_puzzle_1_check"]
