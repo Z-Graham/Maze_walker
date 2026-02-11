@@ -9,17 +9,20 @@
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_itefq"]
+[sub_resource type="Sky" id="Sky_xsrk3"]
 sky_material = SubResource("ProceduralSkyMaterial_6j225")
 
 [sub_resource type="Environment" id="Environment_5ttg2"]
 background_mode = 2
-sky = SubResource("Sky_itefq")
+sky = SubResource("Sky_xsrk3")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsrk3"]
+albedo_color = Color(0.33, 0.25300002, 0, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ttg2"]
-albedo_color = Color(0.28, 0.16800001, 0, 1)
+albedo_color = Color(0.015686275, 0.4117647, 0.07058824, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j225"]
 albedo_color = Color(0.01640001, 0.41, 0.068880044, 1)
@@ -39,6 +42,10 @@ shadow_enabled = true
 
 [node name="floor" type="CSGBox3D" parent="." unique_id=245457988]
 transform = Transform3D(50, 0, 0, 0, 5, 0, 0, 0, 50, 0, -2.490416, 0)
+material = SubResource("StandardMaterial3D_xsrk3")
+
+[node name="floor2" type="CSGBox3D" parent="." unique_id=513457241]
+transform = Transform3D(50, 0, 0, 0, 5, 0, 0, 0, 50, 0, 7.5789356, 0)
 material = SubResource("StandardMaterial3D_5ttg2")
 
 [node name="Walls" type="Node3D" parent="." unique_id=1051579098]
@@ -62,9 +69,9 @@ size = Vector3(1, 5.0981445, 50.01062)
 material = SubResource("StandardMaterial3D_6j225")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Walls" unique_id=1852892477 groups=["wall"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.009120941, 2.5100558, 24.486254)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.536724, 2.5100558, 24.486254)
 use_collision = true
-size = Vector3(1, 5.0981445, 39.986786)
+size = Vector3(1, 5.0981445, 45.078476)
 material = SubResource("StandardMaterial3D_6j225")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Walls" unique_id=50416821 groups=["wall"]]
@@ -217,12 +224,6 @@ use_collision = true
 size = Vector3(1, 5.0981445, 3.9857073)
 material = SubResource("StandardMaterial3D_6j225")
 
-[node name="CSGBox3D30" type="CSGBox3D" parent="Walls" unique_id=1483680085 groups=["wall"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.913313, 2.550482, 24.483025)
-use_collision = true
-size = Vector3(1, 5.0981445, 4.4962716)
-material = SubResource("StandardMaterial3D_6j225")
-
 [node name="Door" type="CSGBox3D" parent="." unique_id=2093218539 groups=["door"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.996424, 2.530316, 24.504099)
 use_collision = true
@@ -230,7 +231,7 @@ size = Vector3(4.005249, 5.0839233, 1)
 material = SubResource("StandardMaterial3D_itefq")
 
 [node name="Player" parent="." unique_id=2344008 instance=ExtResource("1_itefq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.30139, 1.0256276, 23.228952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.30139, 1.7552881, 23.228952)
 speed = 10
 
 [node name="Puzzle_1" parent="." unique_id=890264653 instance=ExtResource("3_tdc2l")]

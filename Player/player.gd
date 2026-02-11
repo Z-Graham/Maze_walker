@@ -5,6 +5,8 @@ var stuck=false
 signal hit_end
 var direction='forward'
 var turning=false
+var looking_up=false
+var looking_down=false
 var moving_forward=false
 var moving_back=false
 var del:float
@@ -39,6 +41,8 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("turn_left"):
 			if not turning:
 				turning=true
+				looking_up=false
+				looking_down=false
 				var turn=create_tween()
 				turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y+90,global_rotation_degrees.z),0.5)
 				await turn.finished
@@ -54,6 +58,8 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("turn_right"):
 			if not turning:
 				turning=true
+				looking_up=false
+				looking_down=false
 				var turn=create_tween()
 				turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y-90,global_rotation_degrees.z),0.5)
 				await turn.finished
@@ -66,6 +72,27 @@ func _process(delta: float) -> void:
 					direction='left'
 				elif direction=='right':
 					direction='back'
+		if Input.is_action_just_pressed("look_up"):
+			if looking_up==false:
+				if looking_down==false:
+					var turn=create_tween()
+					turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x+30,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
+					looking_up=true
+				else:
+					var turn=create_tween()
+					turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
+				looking_down=false
+		if Input.is_action_just_pressed("look_down"):
+			if looking_down==false:
+				if looking_up==false:
+					var turn=create_tween()
+					turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x-30,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
+					looking_down=true
+				else:
+					var turn=create_tween()
+					turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
+				looking_up=false
+
 
 
 

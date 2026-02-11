@@ -1,14 +1,20 @@
 extends Node3D
 
-@export var keyR=randi_range(1,10)
-@export var keyB=randi_range(1,10)
-@export var keyG=randi_range(1,10)
+var keyR:int
+var keyB:int
+var keyG:int
 @onready var puzzle_1: ColorRect = $Puzzle_1
 
-func ready():
+func _ready() -> void:
+	keyR=randi_range(1,9)
+	keyB=randi_range(1,9)
+	keyG=randi_range(1,9)
 	$HintR.text=str(keyR)
 	$HintB.text=str(keyB)
 	$HintG.text=str(keyG)
+
+func _process(delta: float) -> void:
+	pass
 
 func _on_player_hit_end() -> void:
 	$Puzzle_1.visible=true
