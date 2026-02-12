@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d1cwetteunedl"]
 
 [ext_resource type="PackedScene" uid="uid://bty438n0cr3oo" path="res://Player/player.tscn" id="1_l644i"]
+[ext_resource type="PackedScene" uid="uid://dwkrxrjypyb6w" path="res://Mazes/maze_2/riddle_screen.tscn" id="2_8rkck"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8rkck"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -94,9 +95,9 @@ size = Vector3(1, 5.0981445, 23.012505)
 material = SubResource("StandardMaterial3D_n78rp")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="walls" unique_id=2007220612 groups=["wall"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.5843124, 2.550482, 0.41968727)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.618175, 2.550482, 0.41968727)
 use_collision = true
-size = Vector3(1, 5.0981445, 7.946974)
+size = Vector3(1, 5.0981445, 7.8792486)
 material = SubResource("StandardMaterial3D_n78rp")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="walls" unique_id=1779182259 groups=["wall"]]
@@ -190,7 +191,7 @@ size = Vector3(1, 5.0981445, 6.7376323)
 material = SubResource("StandardMaterial3D_n78rp")
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="walls" unique_id=421214221 groups=["wall"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.180195, 2.550482, 0.6513275)
+transform = Transform3D(6.907575e-05, -1.936921e-06, 1, 0.000100722405, 1, 1.9369254e-06, -1, 0.000100722405, 6.907575e-05, 6.180195, 2.550482, 0.6513275)
 use_collision = true
 size = Vector3(1, 5.0981445, 6.4866214)
 material = SubResource("StandardMaterial3D_n78rp")
@@ -202,9 +203,9 @@ size = Vector3(1, 5.0981445, 6.4798484)
 material = SubResource("StandardMaterial3D_n78rp")
 
 [node name="CSGBox3D28" type="CSGBox3D" parent="walls" unique_id=942307688 groups=["wall"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.911703, 2.550482, -4.5811653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.911703, 2.550482, -4.5823474)
 use_collision = true
-size = Vector3(1, 5.0981445, 5.046566)
+size = Vector3(1, 5.0981445, 5.187911)
 material = SubResource("StandardMaterial3D_n78rp")
 
 [node name="CSGBox3D29" type="CSGBox3D" parent="walls" unique_id=856963398 groups=["wall"]]
@@ -214,7 +215,7 @@ size = Vector3(1, 5.0981445, 6.4866214)
 material = SubResource("StandardMaterial3D_n78rp")
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="walls" unique_id=1332332028 groups=["wall"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.2680225, 2.550482, -2.5506558)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.2680225, 2.550482, -2.4823952)
 use_collision = true
 size = Vector3(1, 5.0981445, 6.4798484)
 material = SubResource("StandardMaterial3D_n78rp")
@@ -246,3 +247,25 @@ material = SubResource("StandardMaterial3D_l644i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.531065, 1.7703977, 21.122553)
 size = Vector3(7.70636, 3.7733154, 5.8061523)
 material = SubResource("StandardMaterial3D_8rkck")
+
+[node name="Sphynx_2" type="CSGBox3D" parent="." unique_id=596626635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.796806, 1.7703977, 21.122553)
+size = Vector3(7.70636, 3.7733154, 5.8061523)
+material = SubResource("StandardMaterial3D_8rkck")
+
+[node name="Sphynx_3" type="CSGBox3D" parent="." unique_id=930428143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.796806, 1.7703977, -20.986168)
+size = Vector3(7.70636, 3.7733154, 5.8061523)
+material = SubResource("StandardMaterial3D_8rkck")
+
+[node name="Sphynx_4" type="CSGBox3D" parent="." unique_id=1694482963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.91239, 1.7703977, -20.986168)
+size = Vector3(7.70636, 3.7733154, 5.8061523)
+material = SubResource("StandardMaterial3D_8rkck")
+
+[node name="riddle_screen" parent="." unique_id=1533599760 instance=ExtResource("2_8rkck")]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1105785447]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 2.2713375, 3.0174475, -17.905724)
+text = "Answer the the riddles in the four corners of the maze to unlock the door.
+Be careful, for too many incorrect answers will result in the door being locked forevermore"
