@@ -9,8 +9,10 @@ extends ColorRect
 
 
 var c_riddle=4
+var chances_left=4
 
 func _process(delta: float) -> void:
+	chances.text=str(chances_left)+" chances remain"
 	if c_riddle==1:
 		riddle.text="What came first? The phoenix or the flame?"
 		a.text="The phoenix"
@@ -50,6 +52,7 @@ func _on_a_pressed() -> void:
 		visible=false
 	else:
 		a.visible=false
+		chances_left-=1
 		var fade=create_tween()
 		fade.tween_property(chances,"modulate",Color("ffffff"),0.5)
 		await fade.finished
@@ -59,6 +62,7 @@ func _on_a_pressed() -> void:
 
 func _on_b_pressed() -> void:
 	b.visible=false
+	chances_left-=1
 	var fade=create_tween()
 	fade.tween_property(chances,"modulate",Color("ffffff"),0.5)
 	await fade.finished
@@ -71,6 +75,7 @@ func _on_c_pressed() -> void:
 		visible=false
 	else:
 		c.visible=false
+		chances_left-=1
 		var fade=create_tween()
 		fade.tween_property(chances,"modulate",Color("ffffff"),0.5)
 		await fade.finished
@@ -83,6 +88,7 @@ func _on_d_pressed() -> void:
 		visible=false
 	else:
 		d.visible=false
+		chances_left-=1
 		var fade=create_tween()
 		fade.tween_property(chances,"modulate",Color("ffffff"),0.5)
 		await fade.finished
