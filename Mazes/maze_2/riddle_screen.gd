@@ -4,6 +4,7 @@ extends ColorRect
 @onready var b: Button = $B
 @onready var c: Button = $C
 @onready var d: Button = $D
+@onready var chances: Label = $chances
 
 
 
@@ -49,10 +50,20 @@ func _on_a_pressed() -> void:
 		visible=false
 	else:
 		a.visible=false
+		var fade=create_tween()
+		fade.tween_property(chances,"modulate",Color("ffffff"),0.5)
+		await fade.finished
+		var fade2=create_tween()
+		fade2.tween_property(chances,"modulate",Color("ffffff00"),0.5)
 
 
 func _on_b_pressed() -> void:
 	b.visible=false
+	var fade=create_tween()
+	fade.tween_property(chances,"modulate",Color("ffffff"),0.5)
+	await fade.finished
+	var fade2=create_tween()
+	fade2.tween_property(chances,"modulate",Color("ffffff00"),0.5)
 
 
 func _on_c_pressed() -> void:
@@ -60,6 +71,11 @@ func _on_c_pressed() -> void:
 		visible=false
 	else:
 		c.visible=false
+		var fade=create_tween()
+		fade.tween_property(chances,"modulate",Color("ffffff"),0.5)
+		await fade.finished
+		var fade2=create_tween()
+		fade2.tween_property(chances,"modulate",Color("ffffff00"),0.5)
 
 
 func _on_d_pressed() -> void:
@@ -67,3 +83,8 @@ func _on_d_pressed() -> void:
 		visible=false
 	else:
 		d.visible=false
+		var fade=create_tween()
+		fade.tween_property(chances,"modulate",Color("ffffff"),0.5)
+		await fade.finished
+		var fade2=create_tween()
+		fade2.tween_property(chances,"modulate",Color("ffffff00"),0.5)
