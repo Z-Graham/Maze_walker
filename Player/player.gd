@@ -3,6 +3,7 @@ extends Camera3D
 
 var stuck=false
 signal hit_end
+signal show_riddle(CSGBox3D)
 var direction='forward'
 var turning=false
 var looking_up=false
@@ -118,3 +119,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			global_position.z+=0.5
 	if 'door' in body.get_groups():
 		hit_end.emit()
+	if 'sphynx' in body.get_groups():
+		if body.active==true:
+			show_riddle.emit(body)

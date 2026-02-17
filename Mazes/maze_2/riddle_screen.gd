@@ -6,9 +6,9 @@ extends ColorRect
 @onready var d: Button = $D
 @onready var chances: Label = $chances
 
+signal close
 
-
-var c_riddle=4
+var c_riddle=1
 var chances_left=4
 
 func _process(delta: float) -> void:
@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 func _on_a_pressed() -> void:
 	if c_riddle==2 or c_riddle==4:
 		visible=false
+		close.emit()
 	else:
 		a.visible=false
 		chances_left-=1
@@ -73,6 +74,7 @@ func _on_b_pressed() -> void:
 func _on_c_pressed() -> void:
 	if c_riddle==1 or c_riddle==3:
 		visible=false
+		close.emit()
 	else:
 		c.visible=false
 		chances_left-=1
@@ -86,6 +88,7 @@ func _on_c_pressed() -> void:
 func _on_d_pressed() -> void:
 	if c_riddle==3:
 		visible=false
+		close.emit()
 	else:
 		d.visible=false
 		chances_left-=1
