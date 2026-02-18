@@ -30,6 +30,9 @@ albedo_color = Color(0.45, 0.24000001, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rkck"]
 albedo_color = Color(0.8833333, 1, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_g45pf"]
+font_size = 50
+
 [node name="maze_2" type="Node3D" unique_id=1155560593]
 script = ExtResource("1_g45pf")
 
@@ -140,7 +143,7 @@ size = Vector3(1, 5.0981445, 5.046566)
 material = SubResource("StandardMaterial3D_n78rp")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="walls" unique_id=76463131 groups=["wall"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.940329, 2.550482, -6.9424977)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.940329, 2.550482, -6.8699727)
 use_collision = true
 size = Vector3(1, 5.0981445, 6.4866214)
 material = SubResource("StandardMaterial3D_n78rp")
@@ -262,7 +265,7 @@ script = ExtResource("3_n78rp")
 riddle = 2
 
 [node name="Sphynx_3" type="CSGBox3D" parent="." unique_id=930428143 groups=["sphynx"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.340332, 1.7703977, -20.986168)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.527306, 1.7703977, -20.986168)
 use_collision = true
 size = Vector3(7.70636, 3.7733154, 5.8061523)
 material = SubResource("StandardMaterial3D_8rkck")
@@ -270,7 +273,7 @@ script = ExtResource("3_n78rp")
 riddle = 3
 
 [node name="Sphynx_4" type="CSGBox3D" parent="." unique_id=1694482963 groups=["sphynx"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.91239, 1.7703977, -20.986168)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.539656, 1.7703977, -20.986168)
 use_collision = true
 size = Vector3(7.70636, 3.7733154, 5.8061523)
 material = SubResource("StandardMaterial3D_8rkck")
@@ -284,6 +287,38 @@ visible = false
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 2.2713375, 3.0174475, -17.905724)
 text = "Answer the the riddles in the four corners of the maze to unlock the door.
 Be careful, for too many incorrect answers will result in the door being locked forevermore"
+
+[node name="lock_1" type="CSGBox3D" parent="." unique_id=800315510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.956295, 2.2617962, -23.63661)
+size = Vector3(1, 1, 0.13330078)
+
+[node name="lock_2" type="CSGBox3D" parent="." unique_id=1903629198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7951374, 2.2617962, -23.63661)
+size = Vector3(1, 1, 0.13330078)
+
+[node name="lock_3" type="CSGBox3D" parent="." unique_id=748865921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40106392, 2.2617962, -23.63661)
+size = Vector3(1, 1, 0.13330078)
+
+[node name="lock_4" type="CSGBox3D" parent="." unique_id=1413076838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6173296, 2.2617962, -23.63661)
+size = Vector3(1, 1, 0.13330078)
+
+[node name="lock_text" type="Label" parent="." unique_id=42847514]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = -23.0
+offset_right = 363.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "You hear a lock open"
+label_settings = SubResource("LabelSettings_g45pf")
+horizontal_alignment = 1
 
 [connection signal="show_riddle" from="Player" to="." method="_on_player_show_riddle"]
 [connection signal="close" from="riddle_screen" to="." method="_on_riddle_screen_close"]

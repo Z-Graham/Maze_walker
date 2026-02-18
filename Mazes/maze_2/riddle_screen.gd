@@ -9,7 +9,7 @@ extends ColorRect
 signal close
 
 var c_riddle=1
-var chances_left=4
+var chances_left=5
 
 func _process(delta: float) -> void:
 	chances.text=str(chances_left)+" chances remain"
