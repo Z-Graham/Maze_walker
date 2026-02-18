@@ -45,19 +45,28 @@ func _on_riddle_screen_close() -> void:
 	for s in get_tree().get_nodes_in_group('sphynx'):
 		if s.riddle==riddle_screen.c_riddle:
 			s.active=false
-	if lock_1==false:
-		lock_1==true
+	if lock_1==false and lock_2==false and lock_3==false and lock_4==false:
+		lock_1=true
 		$lock_1.visible=false
 		lock_text_fade()
-	elif lock_1==true:
+		print(lock_1)
+	elif lock_1==true and lock_2==false and lock_3==false and lock_4==false:
 		lock_2=true
 		$lock_2.visible=false
 		lock_text_fade()
-	elif lock_2==true:
+		print("2")
+	elif lock_1==true and lock_2==true and lock_3==false and lock_4==false:
 		lock_3=true
 		$lock_3.visible=false
 		lock_text_fade()
-	elif lock_3==true:
+		print("3")
+	elif lock_1==true and lock_2==true and lock_3==true and lock_4==false:
 		lock_4=true
 		$lock_4.visible=false
 		lock_text_fade()
+		print("4")
+
+
+func _on_player_hit_end() -> void:
+	if lock_4==true:
+		$end_of_level_2.visible=true

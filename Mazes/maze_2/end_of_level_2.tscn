@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://buqv5ewa16yg0"]
+
+[ext_resource type="Script" uid="uid://c6qv6n7lrwksc" path="res://Mazes/maze_2/end_of_level_2.gd" id="1_1r0nj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u63ls"]
+font_size = 70
+
+[node name="end_of_level_2" type="ColorRect" unique_id=262553491]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+script = ExtResource("1_1r0nj")
+
+[node name="Label" type="Label" parent="." unique_id=793326734]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -391.0
+offset_top = -206.0
+offset_right = 391.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Escaped The Maze!"
+label_settings = SubResource("LabelSettings_u63ls")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1642413735]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = 35.0
+offset_right = 368.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+
+[node name="Next" type="Button" parent="HBoxContainer" unique_id=1584115840]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Next Level"
+
+[node name="Retry" type="Button" parent="HBoxContainer" unique_id=1612207036]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Retry"
+
+[node name="Menu" type="Button" parent="HBoxContainer" unique_id=1043875473]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Menu"
