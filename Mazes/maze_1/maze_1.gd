@@ -25,6 +25,7 @@ func _on_player_hit_end() -> void:
 func _on_puzzle_1_check(red: Variant, blue: Variant, green: Variant) -> void:
 	if red==keyR and blue==keyB and green==keyG:
 		$Puzzle_1.visible=false
+		$"Simple Padlock".visible=false
 		$end_of_level_1.visible=true
 	else:
 		$Puzzle_1.wrong.visible=true
