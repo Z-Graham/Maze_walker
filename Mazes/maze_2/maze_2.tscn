@@ -469,9 +469,6 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 0.4, -15.370293, 0, 23.936172)
 [node name="Root Scene9" parent="Node3D" unique_id=963704463 instance=ExtResource("9_ofnoc")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 0.4, -21.522644, 0, 23.936172)
 
-[node name="Root Scene10" parent="Node3D" unique_id=390392322 instance=ExtResource("7_hxqh2")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, -72.25258)
-
 [node name="Root Scene11" parent="Node3D" unique_id=1126128519 instance=ExtResource("9_ofnoc")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 0.4, 20.473312, 0, -24.431938)
 
