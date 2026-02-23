@@ -47,22 +47,22 @@ func _on_riddle_screen_close() -> void:
 			s.active=false
 	if lock_1==false and lock_2==false and lock_3==false and lock_4==false:
 		lock_1=true
-		$lock_1.visible=false
+		$"Simple Padlock".visible=false
 		lock_text_fade()
 		print(lock_1)
 	elif lock_1==true and lock_2==false and lock_3==false and lock_4==false:
 		lock_2=true
-		$lock_2.visible=false
+		$"Simple Padlock2".visible=false
 		lock_text_fade()
 		print("2")
 	elif lock_1==true and lock_2==true and lock_3==false and lock_4==false:
 		lock_3=true
-		$lock_3.visible=false
+		$"Simple Padlock3".visible=false
 		lock_text_fade()
 		print("3")
 	elif lock_1==true and lock_2==true and lock_3==true and lock_4==false:
 		lock_4=true
-		$lock_4.visible=false
+		$"Simple Padlock4".visible=false
 		lock_text_fade()
 		print("4")
 
