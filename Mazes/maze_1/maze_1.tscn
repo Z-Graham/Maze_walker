@@ -267,7 +267,7 @@ transform = Transform3D(5, 0, 0, 0, 4.5, 0, 0, 0, 1, 15.117773, 0.01317066, 24.0
 transform = Transform3D(-4.3711392e-08, 0, 0.2, 0, 1, 0, -5, 0, -4.371139e-08, 1.8256423, 0, -3.1094418)
 
 [node name="Root Scene32" parent="bushes" unique_id=429465531 instance=ExtResource("6_vg25c")]
-transform = Transform3D(-2.1855695e-07, 0, 0.4, 0, 1, 0, -5, 0, -1.7484556e-08, 0.8934605, 0, -3.621252)
+transform = Transform3D(-2.1855695e-07, 0, 0.4, 0, 1, 0, -5, 0, -1.7484556e-08, 0.8582127, 0, -3.621252)
 
 [node name="Root Scene33" parent="bushes" unique_id=761390508 instance=ExtResource("6_vg25c")]
 transform = Transform3D(-4.3711392e-08, 0, 0.2, 0, 1, 0, -5, 0, -4.371139e-08, 0.9349537, 0, -9.42322)

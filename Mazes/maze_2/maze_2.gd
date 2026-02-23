@@ -70,3 +70,4 @@ func _on_riddle_screen_close() -> void:
 func _on_player_hit_end() -> void:
 	if lock_4==true:
 		$end_of_level_2.visible=true
+		player.stuck=true

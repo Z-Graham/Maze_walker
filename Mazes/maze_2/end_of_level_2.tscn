@@ -43,12 +43,7 @@ offset_right = 368.0
 offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 200
-
-[node name="Next" type="Button" parent="HBoxContainer" unique_id=1584115840]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Next Level"
+theme_override_constants/separation = 600
 
 [node name="Retry" type="Button" parent="HBoxContainer" unique_id=1612207036]
 layout_mode = 2
@@ -60,6 +55,5 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Menu"
 
-[connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="HBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="HBoxContainer/Menu" to="." method="_on_menu_pressed"]

@@ -14,11 +14,11 @@ var chances_left=5
 func _process(delta: float) -> void:
 	chances.text=str(chances_left)+" chances remain"
 	if c_riddle==1:
-		riddle.text="What came first? The phoenix or the flame?"
-		a.text="The phoenix"
-		b.text="The flame"
+		riddle.text="What came first? The chicken or the egg?"
+		a.text="The chicken"
+		b.text="The egg"
 		c.text="A circle has no beginning"
-		d.text="Time"
+		d.text="KFC"
 	elif c_riddle==2:
 		riddle.text="The power of authority, for better or worse. 
 		Held by the strong, and rarely the weak. 
