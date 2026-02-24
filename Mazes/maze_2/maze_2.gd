@@ -49,22 +49,22 @@ func _on_riddle_screen_close() -> void:
 		lock_1=true
 		$"Simple Padlock".visible=false
 		lock_text_fade()
-		print(lock_1)
+		$AudioStreamPlayer.play()
 	elif lock_1==true and lock_2==false and lock_3==false and lock_4==false:
 		lock_2=true
 		$"Simple Padlock2".visible=false
 		lock_text_fade()
-		print("2")
+		$AudioStreamPlayer.play()
 	elif lock_1==true and lock_2==true and lock_3==false and lock_4==false:
 		lock_3=true
 		$"Simple Padlock3".visible=false
 		lock_text_fade()
-		print("3")
+		$AudioStreamPlayer.play()
 	elif lock_1==true and lock_2==true and lock_3==true and lock_4==false:
 		lock_4=true
 		$"Simple Padlock4".visible=false
 		lock_text_fade()
-		print("4")
+		$AudioStreamPlayer.play()
 
 
 func _on_player_hit_end() -> void:

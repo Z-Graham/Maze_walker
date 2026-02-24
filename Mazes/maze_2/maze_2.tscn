@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://er36yyi5e0r6" path="res://assets/Simple Padlock.glb" id="5_rteos"]
 [ext_resource type="PackedScene" uid="uid://dn8kqdicyf2ul" path="res://assets/Arch Door.glb" id="7_hxqh2"]
 [ext_resource type="PackedScene" uid="uid://cyehw0vlk6qpi" path="res://assets/Hedge.glb" id="9_ofnoc"]
+[ext_resource type="AudioStream" uid="uid://cqvwl15xaxkkv" path="res://assets/audio/mixkit-gear-metallic-lock-sound-2858.wav" id="10_p848a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8rkck"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,7 +25,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gnxx4"]
-albedo_color = Color(0.26, 0.19933334, 0, 1)
+albedo_color = Color(0.18039216, 0.13725491, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n78rp"]
 albedo_color = Color(0.01640001, 0.41, 0.068880044, 1)
@@ -46,7 +47,7 @@ transform = Transform3D(-0.9593272, -0.28215522, -0.008930296, -0.00088755786, -
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=230167780 instance=ExtResource("1_l644i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0520182, 23.431646)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8198023, 23.431646)
 speed = 10
 
 [node name="floor" type="CSGBox3D" parent="." unique_id=1233057568]
@@ -298,7 +299,7 @@ riddle = 4
 visible = false
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1105785447]
-transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 2.2713375, 3.0174475, -17.905724)
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 1.5257871, 3.0174475, -17.905724)
 text = "Answer the the riddles in the four corners of the maze to unlock the door.
 Be careful, for too many incorrect answers will result in the door being locked forevermore"
 
@@ -591,6 +592,9 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 0.4, -15.370293, 0, -24.431938)
 
 [node name="Root Scene18" parent="Node3D" unique_id=1314930502 instance=ExtResource("9_ofnoc")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 0.4, -21.522644, 0, -24.431938)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=803304803]
+stream = ExtResource("10_p848a")
 
 [connection signal="hit_end" from="Player" to="." method="_on_player_hit_end"]
 [connection signal="show_riddle" from="Player" to="." method="_on_player_show_riddle"]

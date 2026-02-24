@@ -13,6 +13,8 @@ var moving_back=false
 var del:float
 func _process(delta: float) -> void:
 	del=delta
+	if stuck or turning:
+		$AudioStreamPlayer.stop()
 	if not stuck:
 		if Input.is_action_pressed('move_forward'):
 			if not turning:
@@ -31,6 +33,7 @@ func _process(delta: float) -> void:
 			if not turning:
 				moving_forward=false
 				moving_back=true
+
 				if direction=='forward':
 					global_position.z+=speed*delta
 				elif direction=='left':
@@ -93,8 +96,15 @@ func _process(delta: float) -> void:
 					var turn=create_tween()
 					turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
 				looking_up=false
-
-
+		if Input.is_action_pressed("move_forward"):
+			if not $AudioStreamPlayer.playing and not turning:
+				$AudioStreamPlayer.play()
+		elif Input.is_action_pressed("move_backward"):
+			if not $AudioStreamPlayer.playing and not turning:
+				$AudioStreamPlayer.play()
+		else:
+			if $AudioStreamPlayer.playing:
+				$AudioStreamPlayer.stop()
 
 
 
