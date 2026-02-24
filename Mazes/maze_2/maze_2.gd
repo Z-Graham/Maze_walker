@@ -15,7 +15,9 @@ var lock_4=false
 
 func _process(delta: float) -> void:
 	if riddle_screen.chances_left<=0:
-		get_tree().reload_current_scene()
+		$end_of_level_2.visible=true
+		riddle_screen.visible=false
+		$end_of_level_2.label.text="The door remains locked forever"
 
 
 func _on_player_show_riddle(s:CSGBox3D) -> void:

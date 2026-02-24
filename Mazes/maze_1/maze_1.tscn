@@ -36,6 +36,9 @@ uv2_triplanar_sharpness = 0.5547846
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itefq"]
 albedo_color = Color(0.56, 0.34533334, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_gmvof"]
+font_size = 40
+
 [node name="maze_1" type="Node3D" unique_id=988982650]
 script = ExtResource("1_5ttg2")
 
@@ -254,6 +257,12 @@ font_size = 300
 [node name="HintG" type="Label3D" parent="." unique_id=842512481]
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 1.561965, 2.1330361, 8.489387)
 modulate = Color(0, 1, 0.01666665, 1)
+text = "5"
+font_size = 300
+
+[node name="HintY" type="Label3D" parent="." unique_id=1500032470]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0.5852468, 3.1685014, -21.952421)
+modulate = Color(0.9490196, 1, 0, 1)
 text = "5"
 font_size = 300
 
@@ -625,6 +634,20 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, -21.9414, 0, 24.02779)
 [node name="Simple Padlock" parent="." unique_id=913175745 instance=ExtResource("8_44j04")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.924953, 2.3961067, 23.825272)
 
+[node name="Timer_label" type="Label" parent="." unique_id=44662631]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -104.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Time left: 150"
+label_settings = SubResource("LabelSettings_gmvof")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1189586568]
+
 [connection signal="hit_end" from="Player" to="." method="_on_player_hit_end"]
 [connection signal="check" from="Puzzle_1" to="." method="_on_puzzle_1_check"]
 [connection signal="close" from="Puzzle_1" to="." method="_on_puzzle_1_close"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

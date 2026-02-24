@@ -62,5 +62,21 @@ offset_bottom = 429.0
 theme_override_font_sizes/font_size = 60
 text = "Maze 2"
 
+[node name="CheckButton" type="OptionButton" parent="." unique_id=545913304]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 514.0
+offset_right = 681.0
+offset_bottom = 597.0
+theme_override_font_sizes/font_size = 40
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Survival"
+popup/item_0/id = 0
+popup/item_1/text = "Speedrun"
+popup/item_1/id = 1
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="item_selected" from="CheckButton" to="." method="_on_check_button_item_selected"]
