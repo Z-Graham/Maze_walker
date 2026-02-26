@@ -1,7 +1,8 @@
 extends Control
 
 
-
+func _ready():
+	Globals.mode="survival"
 
 
 func _on_button_pressed() -> void:
