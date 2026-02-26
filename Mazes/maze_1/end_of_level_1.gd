@@ -1,4 +1,5 @@
 extends ColorRect
+@onready var label: Label = $Label
 
 
 

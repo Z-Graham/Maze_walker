@@ -7,7 +7,8 @@ extends Node3D
 @onready var riddle_screen: ColorRect = $riddle_screen
 @onready var player: Camera3D = $Player
 @onready var lock_text: Label = $lock_text
-
+var time_left=150
+var current_time=0
 var lock_1=false
 var lock_2=false
 var lock_3=false
@@ -18,7 +19,11 @@ func _process(delta: float) -> void:
 		$end_of_level_2.visible=true
 		riddle_screen.visible=false
 		$end_of_level_2.label.text="The door remains locked forever"
-
+	if not $end_of_level_2.visible:
+		if Globals.mode=="survival":
+			$Timer_label.text="Time left: "+str(time_left)
+		elif Globals.mode=="speed":
+			$Timer_label.text="Time: "+str(current_time)
 
 func _on_player_show_riddle(s:CSGBox3D) -> void:
 	riddle_screen.c_riddle=s.riddle
@@ -73,3 +78,16 @@ func _on_player_hit_end() -> void:
 	if lock_4==true:
 		$end_of_level_2.visible=true
 		player.stuck=true
+
+
+func _on_timer_timeout() -> void:
+	time_left-=1
+	current_time+=1
+
+
+func _on_lose_timeout() -> void:
+	if Globals.mode=="survival":
+		$Player.stuck=true
+		$end_of_level_2.visible=true
+		$end_of_level_2.label.text="You were forever lost in the maze"
+		$Timer_label.text="Time left: 0"

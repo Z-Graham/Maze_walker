@@ -4,6 +4,7 @@ var keyR:int
 var keyB:int
 var keyG:int
 var time_left=150
+var current_time=0
 @onready var puzzle_1: ColorRect = $Puzzle_1
 
 func _ready() -> void:
@@ -17,7 +18,11 @@ func _ready() -> void:
 	$Timer.start()
 
 func _process(delta: float) -> void:
-	$Timer_label.text="Time left: "+str(time_left)
+	if not $end_of_level_1.visible:
+		if Globals.mode=="survival":
+			$Timer_label.text="Time left: "+str(time_left)
+		elif Globals.mode=="speed":
+			$Timer_label.text="Time: "+str(current_time)
 
 
 func _on_player_hit_end() -> void:
@@ -42,3 +47,12 @@ func _on_puzzle_1_close() -> void:
 
 func _on_timer_timeout() -> void:
 	time_left-=1
+	current_time+=1
+
+
+func _on_lose_timeout() -> void:
+	if Globals.mode=="survival":
+		$Player.stuck=true
+		$end_of_level_1.visible=true
+		$end_of_level_1.label.text="You were forever lost in the maze"
+		$Timer_label.text="Time left: 0"
