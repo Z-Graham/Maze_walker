@@ -76,26 +76,36 @@ func _process(delta: float) -> void:
 					direction='left'
 				elif direction=='right':
 					direction='back'
-		if Input.is_action_just_pressed("look_up"):
-			if looking_up==false:
-				if looking_down==false:
-					var turn=create_tween()
-					turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x+30,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
-					looking_up=true
-				else:
-					var turn=create_tween()
-					turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
-				looking_down=false
-		if Input.is_action_just_pressed("look_down"):
-			if looking_down==false:
+		#if Input.is_action_just_pressed("look_up"):
+			if not turning:
+				turning=true
 				if looking_up==false:
-					var turn=create_tween()
-					turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x-30,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
-					looking_down=true
-				else:
-					var turn=create_tween()
-					turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
-				looking_up=false
+					if looking_down==false:
+						var turn=create_tween()
+						turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x+30,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
+						
+						looking_up=true
+					else:
+						var turn=create_tween()
+						turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
+						
+					looking_down=false
+				turning=false
+		#if Input.is_action_just_pressed("look_down"):
+			if not turning:
+				turning=true
+				if looking_down==false:
+					if looking_up==false:
+						var turn=create_tween()
+						turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x-30,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
+					
+						looking_down=true
+					else:
+						var turn=create_tween()
+						turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
+						
+					looking_up=false
+			turning=false
 		if Input.is_action_pressed("move_forward"):
 			if not $AudioStreamPlayer.playing and not turning:
 				$AudioStreamPlayer.play()
