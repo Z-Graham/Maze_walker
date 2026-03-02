@@ -1,5 +1,7 @@
 extends ColorRect
 @onready var label: Label = $Label
+@onready var retry: Button = $HBoxContainer/Retry
+@onready var menu: Button = $HBoxContainer/Menu
 
 
 

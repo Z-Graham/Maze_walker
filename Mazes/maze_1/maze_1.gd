@@ -45,6 +45,7 @@ func _on_puzzle_1_check(red: Variant, blue: Variant, green: Variant) -> void:
 	elif red==keyY and blue==keyY and green==keyY:
 		$Yellow.visible=true
 		$Puzzle_1.unlock.text="Yellow"
+		$Puzzle_1.close.text="Yellow"
 	else:
 		$Puzzle_1.wrong.visible=true
 
