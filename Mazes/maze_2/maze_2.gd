@@ -78,6 +78,9 @@ func _on_player_hit_end() -> void:
 	if lock_4==true:
 		$end_of_level_2.visible=true
 		player.stuck=true
+		if Globals.mode=="speed":
+			if current_time<Globals.maze_2_time or Globals.maze_2_time==0:
+				Globals.maze_2_time=current_time
 
 
 func _on_timer_timeout() -> void:

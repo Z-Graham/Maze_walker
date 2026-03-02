@@ -18,3 +18,7 @@ func _on_check_button_item_selected(index: int) -> void:
 		Globals.mode="survival"
 	elif index==1:
 		Globals.mode="speed"
+
+
+func _on_button_3_pressed() -> void:
+	get_tree().change_scene_to_file("res://Other/records_screen.tscn")

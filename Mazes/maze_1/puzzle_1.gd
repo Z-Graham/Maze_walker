@@ -4,6 +4,8 @@ extends ColorRect
 @onready var label_3: Label = $Label3
 @onready var wrong: Label = $wrong
 
+@onready var unlock: Button = $Unlock
+
 signal check(red,blue,green)
 signal close()
 

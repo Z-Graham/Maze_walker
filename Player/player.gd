@@ -11,7 +11,7 @@ var looking_down=false
 var moving_forward=false
 var moving_back=false
 var del:float
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	del=delta
 	if stuck or turning:
 		$AudioStreamPlayer.stop()
@@ -33,7 +33,6 @@ func _process(delta: float) -> void:
 			if not turning:
 				moving_forward=false
 				moving_back=true
-
 				if direction=='forward':
 					global_position.z+=speed*delta
 				elif direction=='left':
@@ -45,12 +44,9 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("turn_left"):
 			if not turning:
 				turning=true
-				looking_up=false
-				looking_down=false
 				var turn=create_tween()
 				turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y+90,global_rotation_degrees.z),0.5)
 				await turn.finished
-				turning=false
 				if direction=='forward':
 					direction='left'
 				elif direction=='left':
@@ -59,6 +55,7 @@ func _process(delta: float) -> void:
 					direction='right'
 				elif direction=='right':
 					direction='forward'
+				turning=false
 		if Input.is_action_just_pressed("turn_right"):
 			if not turning:
 				turning=true
@@ -67,7 +64,7 @@ func _process(delta: float) -> void:
 				var turn=create_tween()
 				turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y-90,global_rotation_degrees.z),0.5)
 				await turn.finished
-				turning=false
+				
 				if direction=='forward':
 					direction='right'
 				elif direction=='left':
@@ -76,36 +73,7 @@ func _process(delta: float) -> void:
 					direction='left'
 				elif direction=='right':
 					direction='back'
-		#if Input.is_action_just_pressed("look_up"):
-			if not turning:
-				turning=true
-				if looking_up==false:
-					if looking_down==false:
-						var turn=create_tween()
-						turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x+30,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
-						
-						looking_up=true
-					else:
-						var turn=create_tween()
-						turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
-						
-					looking_down=false
 				turning=false
-		#if Input.is_action_just_pressed("look_down"):
-			if not turning:
-				turning=true
-				if looking_down==false:
-					if looking_up==false:
-						var turn=create_tween()
-						turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x-30,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
-					
-						looking_down=true
-					else:
-						var turn=create_tween()
-						turn.tween_property($".",'global_rotation_degrees',Vector3(global_rotation.x,global_rotation_degrees.y,global_rotation_degrees.z),0.5)
-						
-					looking_up=false
-			turning=false
 		if Input.is_action_pressed("move_forward"):
 			if not $AudioStreamPlayer.playing and not turning:
 				$AudioStreamPlayer.play()

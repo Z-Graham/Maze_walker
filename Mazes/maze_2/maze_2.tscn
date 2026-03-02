@@ -617,7 +617,7 @@ label_settings = SubResource("LabelSettings_p848a")
 horizontal_alignment = 1
 
 [node name="Lose" type="Timer" parent="." unique_id=951260143]
-wait_time = 10.0
+wait_time = 150.0
 autostart = true
 
 [connection signal="hit_end" from="Player" to="." method="_on_player_hit_end"]

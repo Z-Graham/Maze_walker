@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bfc2l2oigx5h5"]
+
+[ext_resource type="Script" uid="uid://bpy7t3qbdo4pa" path="res://Other/records_screen.gd" id="1_qos0i"]
+
+[node name="Records Screen" type="Control" unique_id=1120257234]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qos0i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1716994448]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="best_time_1" type="Label" parent="." unique_id=1515543770]
+layout_mode = 1
+offset_right = 349.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "Maze 1 best time: "
+horizontal_alignment = 1
+
+[node name="best_time_2" type="Label" parent="." unique_id=330351899]
+layout_mode = 1
+offset_top = 127.0
+offset_right = 349.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 40
+text = "Maze 2 best time: "
+
+[node name="Button" type="Button" parent="." unique_id=1720637580]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -236.5
+offset_top = -104.0
+offset_right = 236.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 70
+text = "Back to menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

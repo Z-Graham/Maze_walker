@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://debee10gnftwg"]
 
 [ext_resource type="Texture2D" uid="uid://0phnbsm13e6i" path="res://assets/Hedge_Leaf_Texture.png" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://d31wkinf6rn5s" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://d31wkinf6rn5s" path="res://Other/main_menu.gd" id="1_7vrkn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fu7sn"]
 font_size = 124
@@ -98,6 +98,17 @@ popup/item_0/id = 0
 popup/item_1/text = "Speedrun"
 popup/item_1/id = 1
 
+[node name="Button3" type="Button" parent="." unique_id=1294831463]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Records"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="item_selected" from="CheckButton" to="." method="_on_check_button_item_selected"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
