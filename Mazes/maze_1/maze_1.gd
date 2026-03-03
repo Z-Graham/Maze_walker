@@ -7,6 +7,7 @@ var keyY:int
 var time_left=150
 var current_time=0
 @onready var puzzle_1: ColorRect = $Puzzle_1
+@onready var end_of_level_1: ColorRect = $end_of_level_1
 
 func _ready() -> void:
 	keyR=randi_range(1,9)
@@ -45,7 +46,9 @@ func _on_puzzle_1_check(red: Variant, blue: Variant, green: Variant) -> void:
 	elif red==keyY and blue==keyY and green==keyY:
 		$Yellow.visible=true
 		$Puzzle_1.unlock.text="Yellow"
-		$Puzzle_1.close.text="Yellow"
+		$Puzzle_1.close_b.text="Yellow"
+		end_of_level_1.retry.text="Yellow"
+		end_of_level_1.menu.text="Yellow"
 	else:
 		$Puzzle_1.wrong.visible=true
 
