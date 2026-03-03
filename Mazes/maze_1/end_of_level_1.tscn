@@ -29,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "You Escaped The Maze!"
 label_settings = SubResource("LabelSettings_vmevm")
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1630684802]
 layout_mode = 1

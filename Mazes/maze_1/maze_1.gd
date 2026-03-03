@@ -47,8 +47,10 @@ func _on_puzzle_1_check(red: Variant, blue: Variant, green: Variant) -> void:
 		$Yellow.visible=true
 		$Puzzle_1.unlock.text="Yellow"
 		$Puzzle_1.close_b.text="Yellow"
+		$Puzzle_1.wrong.text="Yellow"
 		end_of_level_1.retry.text="Yellow"
 		end_of_level_1.menu.text="Yellow"
+		end_of_level_1.label.text="Yellow"
 	else:
 		$Puzzle_1.wrong.visible=true
 

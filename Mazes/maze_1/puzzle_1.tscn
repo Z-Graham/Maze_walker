@@ -182,6 +182,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "The door remains locked"
 label_settings = SubResource("LabelSettings_nfhiq")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="HBoxContainer/red" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="HBoxContainer/blue" to="." method="_on_blue_pressed"]
